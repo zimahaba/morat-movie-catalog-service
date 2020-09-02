@@ -15,6 +15,7 @@ public class MovieInfoService {
     @Autowired
     private RestTemplate restTemplate;
 
+    // Circuit Breaker
     @HystrixCommand(fallbackMethod = "getFallbackCatalogItem",
             commandProperties = {
                     @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
